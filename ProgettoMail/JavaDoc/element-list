@@ -1,0 +1,4 @@
+module:mailProject
+mailProject.client
+mailProject.common
+mailProject.server

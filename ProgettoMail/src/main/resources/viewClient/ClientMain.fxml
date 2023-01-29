@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="855.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mailProject.client.MainController">
+    <top>
+        <Label fx:id="header" alignment="CENTER" prefHeight="30.0" prefWidth="750.0" BorderPane.alignment="CENTER">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+    </top>
+    <bottom>
+        <SplitPane prefHeight="57.0" prefWidth="855.0" BorderPane.alignment="CENTER">
+            <items>
+                <ToolBar prefHeight="48.0" prefWidth="853.0">
+                    <items>
+                        <Button mnemonicParsing="false" onAction="#newMail" prefHeight="33.0" prefWidth="100.0">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <graphic>
+                                <ImageView preserveRatio="true">
+                                    <Image url="@../img/create-mail.png" requestedHeight="18.0" preserveRatio="true"/>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="delete" disable="true" mnemonicParsing="false" onAction="#deleteMail" prefHeight="33.0" prefWidth="100.0">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <graphic>
+                                <ImageView preserveRatio="true">
+                                    <Image url="@../img/icon-delete.png" requestedHeight="18.0" preserveRatio="true"/>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <HBox prefHeight="37.0" prefWidth="494.0" />
+                        <Button mnemonicParsing="false" onAction="#logout" prefHeight="33.0" prefWidth="100.0">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <graphic>
+                                <ImageView preserveRatio="true">
+                                    <Image url="@../img/logout.png" requestedHeight="18.0" preserveRatio="true"/>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </items>
+                    <padding>
+                        <Insets left="10.0" right="10.0" />
+                    </padding>
+                </ToolBar>
+            </items>
+        </SplitPane>
+    </bottom>
+    <left>
+        <TitledPane animated="false" collapsible="false" prefHeight="490.0" prefWidth="200.0" text="Posta in arrivo"
+                    BorderPane.alignment="CENTER">
+            <font>
+                <Font name="Helvetica" size="16.0"/>
+            </font>
+            <BorderPane.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0"/>
+            </BorderPane.margin>
+            <AnchorPane fx:id="receivedBox" minHeight="0.0" minWidth="800.0" prefHeight="180.0" prefWidth="200.0">
+                <padding>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                </padding>
+                <ListView fx:id="mailList" onMouseClicked="#printReceived" prefHeight="200.0" prefWidth="180.0"
+                          AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                          AnchorPane.topAnchor="0.0"/>
+            </AnchorPane>
+        </TitledPane>
+    </left>
+</BorderPane>
