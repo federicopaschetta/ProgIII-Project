@@ -1,6 +1,3 @@
-Based on the project requirements detailed in your document regarding a Java application for email service management, here is a structured `README.md` file for your project:
-
-```markdown
 # Java Email Service Application
 
 ## Overview
